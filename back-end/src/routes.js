@@ -1,10 +1,11 @@
 const express = require('express');
+const SessionController = require('./controllers/SessionController')
+const SpotController = require('./controllers/SpotController')
 
 const routes = express.Router();
 
-routes.put('/users', (req, res) => {
-    return res.json(req.body)
-})
+routes.post('/sessions', SessionController.store)
+routes.post('/spots', SpotController.store)
 
 
 module.exports = routes; 
